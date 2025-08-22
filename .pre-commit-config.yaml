@@ -1,0 +1,210 @@
+# Pre-commit hooks configuration for AISG KKD Denetim Sistemi
+# This file configures automatic code quality checks before commits
+
+repos:
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: debug-statements
+      - id: requirements-txt-fixer
+      - id: fix-byte-order-marker
+
+  # Python code formatting
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--line-length=127]
+
+  # Import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: [--profile=black, --line-length=127]
+
+  # Python linting
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+        args: [--max-line-length=127, --extend-ignore=E203,W503]
+
+  # Type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-all]
+        args: [--ignore-missing-imports]
+
+  # Security checks
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: [-r, ., -f, json, -o, bandit-report.json]
+        exclude: ^(tests/|venv/|\.venv/)
+
+  # Dependency security
+  - repo: https://github.com/PyCQA/safety
+    rev: 2.3.5
+    hooks:
+      - id: safety
+        args: [check, --json, --output, safety-report.json]
+
+  # Jupyter notebook formatting
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.1
+    hooks:
+      - id: nbqa-black
+        args: [--line-length=127]
+      - id: nbqa-isort
+        args: [--profile=black, --line-length=127]
+
+  # YAML formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types: [yaml]
+        args: [--prose-wrap=always]
+
+  # Markdown formatting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
+    hooks:
+      - id: markdownlint
+        args: [--fix]
+
+  # Git hooks
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types: [json]
+        args: [--prose-wrap=always]
+
+  # Commit message formatting
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.13.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+  # Dockerfile linting
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+
+  # Shell script linting
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0
+    hooks:
+      - id: shellcheck
+        args: [--severity=warning]
+
+  # Terraform formatting (if used)
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.88.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_docs
+      - id: terraform_tflint
+
+  # Docker Compose validation
+  - repo: https://github.com/redhat-developer/yaml
+    rev: v2.12.0
+    hooks:
+      - id: yamlfmt
+        args: [--line-width=127]
+
+  # License header check
+  - repo: https://github.com/apache/skywalking-eyes
+    rev: v0.5.0
+    hooks:
+      - id: license-eye
+        args: [fix]
+
+  # Spell checking
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.16.4
+    hooks:
+      - id: typos
+
+  # JSON schema validation
+  - repo: https://github.com/sirosen/check-jsonschema
+    rev: 0.27.0
+    hooks:
+      - id: check-jsonschema
+        args: [--schemafile, .github/schemas/issue.json]
+        files: \.github/ISSUE_TEMPLATE/.*\.md$
+
+# Global exclude patterns
+exclude: |
+  (?x)^(
+      \.git/|
+      \.venv/|
+      venv/|
+      node_modules/|
+      dist/|
+      build/|
+      \.tox/|
+      \.pytest_cache/|
+      __pycache__/|
+      \.mypy_cache/|
+      \.coverage|
+      htmlcov/|
+      \.eggs/|
+      \.idea/|
+      \.vscode/|
+      \.DS_Store|
+      \.env|
+      \.env\.local|
+      \.env\.development|
+      \.env\.test|
+      \.env\.production|
+      *.pyc|
+      *.pyo|
+      *.pyd|
+      *.so|
+      *.egg|
+      *.egg-info|
+      *.log|
+      *.tmp|
+      *.temp|
+      *.bak|
+      *.backup|
+      *.swp|
+      *.swo|
+      *~|
+      \#*|
+      \.#*|
+  )$
+
+# Default settings
+default_language_version:
+  python: python3
+  node: 18
+
+# Minimum pre-commit version
+min_pre_commit_version: 3.3.0
+
+# Fail fast on errors
+fail_fast: false
+
+# Allow unused hooks
+allow_unused_hooks: false
+
+# Show source of hooks
+show_source: true
