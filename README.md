@@ -4,7 +4,7 @@
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Latest-green.svg)](https://github.com/ultralytics/ultralytics)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 📋 İçindekiler
+## İçindekiler
 
 - [Proje Hakkında](#proje-hakkında)
 - [Özellikler](#özellikler)
@@ -17,7 +17,7 @@
 - [Lisans](#lisans)
 - [İletişim](#iletişim)
 
-## 🎯 Proje Hakkında
+## Proje Hakkında
 
 AISG KKD Denetim Sistemi, çalışanların kişisel koruyucu donanım kullanma durumlarını izleyerek, çalışma ortamındaki güvenliği yükseltmek için geliştirilmiş kapsamlı bir iş sağlığı ve güvenliği çözümüdür.
 
@@ -29,27 +29,27 @@ AISG KKD Denetim Sistemi, çalışanların kişisel koruyucu donanım kullanma d
 - **Risk Uyarıları**: Güvenlik ihlallerinde anında bildirim gönderme
 - **Compliance Raporlama**: Detaylı güvenlik raporları ve performans metrikleri
 
-## ✨ Özellikler
+## Özellikler
 
-### 🔒 Güvenlik Tespiti
+### Güvenlik Tespiti
 - **Baret Tespiti**: YOLOv8 tabanlı özel model ile baret kullanımı kontrolü
 - **Reflektif Yelek Tespiti**: Görsel analiz ile yelek tespiti
 - **İnsan Tespiti**: Çalışan varlığı ve sayısı analizi
 - **Poz Sınıflandırması**: Oturuyor/ayakta durumu tespiti
 
-### 📊 Dashboard ve Raporlama
+### Dashboard ve Raporlama
 - **Gerçek Zamanlı Analiz**: Anlık güvenlik durumu izleme
 - **Akıllı Uyarı Sistemi**: Risk durumlarında otomatik bildirim
 - **Detaylı Raporlama**: Compliance raporları ve performans metrikleri
 - **Mobil Uyumluluk**: Responsive tasarım ile her cihazdan erişim
 
-### 🔧 Teknik Özellikler
+### Teknik Özellikler
 - **Kolay Entegrasyon**: Mevcut kamera altyapılarına uyum
 - **Güvenli İşleme**: Kurum içi çalıştırma seçenekleri
 - **Çoklu Kamera Desteği**: Birden fazla kamera ile eş zamanlı analiz
 - **API Desteği**: RESTful API ile sistem entegrasyonu
 
-## 🛠️ Teknolojiler
+## Teknolojiler
 
 ### Backend
 - **Python 3.8+**: Ana programlama dili
@@ -70,7 +70,7 @@ AISG KKD Denetim Sistemi, çalışanların kişisel koruyucu donanım kullanma d
 - **Real-time Processing**: Gerçek zamanlı analiz
 - **Multi-class Detection**: Çoklu sınıf tespiti
 
-## 🚀 Kurulum
+## Kurulum
 
 ### Gereksinimler
 - Python 3.8 veya üzeri
@@ -79,8 +79,8 @@ AISG KKD Denetim Sistemi, çalışanların kişisel koruyucu donanım kullanma d
 
 ### 1. Repository'yi Klonlayın
 ```bash
-git clone https://github.com/username/aisg-kkd-denetim-sistemi.git
-cd aisg-kkd-denetim-sistemi
+git clone https://github.com/ErenAta16/-AISG-Personal-Protective-Equipment-Inspection-System.git
+cd -AISG-Personal-Protective-Equipment-Inspection-System
 ```
 
 ### 2. Sanal Ortam Oluşturun
@@ -111,7 +111,7 @@ python app.py
 
 Uygulama `http://localhost:5000` adresinde çalışmaya başlayacaktır.
 
-## 📖 Kullanım
+## Kullanım
 
 ### Dashboard Erişimi
 1. Web tarayıcınızda `http://localhost:5000` adresine gidin
@@ -135,7 +135,7 @@ data = response.json()
 status = requests.get('http://localhost:5000/api/status')
 ```
 
-## 🔌 API Dokümantasyonu
+## API Dokümantasyonu
 
 ### Endpoints
 
@@ -169,7 +169,7 @@ Sistem durumu ve istatistikleri döndürür.
 #### `POST /api/configure`
 Sistem ayarlarını günceller.
 
-## 🤖 Model Detayları
+## Model Detayları
 
 ### Baret ve Yelek Tespit Modeli
 - **Model**: YOLOv8 (custom trained)
@@ -189,7 +189,7 @@ Sistem ayarlarını günceller.
 - **İşlem Hızı**: 25-35 FPS
 - **Gecikme**: <100ms
 
-## 🔮 Gelecek Planları
+## Gelecek Planları
 
 ### Kısa Vadeli (3-6 ay)
 - [ ] Çoklu kamera desteği
@@ -206,7 +206,7 @@ Sistem ayarlarını günceller.
 - [ ] Cloud entegrasyonu
 - [ ] IoT sensör entegrasyonu
 
-## 🤝 Katkıda Bulunma
+## Katkıda Bulunma
 
 Bu projeye katkıda bulunmak istiyorsanız:
 
@@ -223,11 +223,11 @@ Bu projeye katkıda bulunmak istiyorsanız:
 - Test yazımı
 - Bug fixes
 
-## 📄 Lisans
+## Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-## 📞 İletişim
+## İletişim
 
 ### Proje Ekibi
 - **Eren Ata** - Geliştirici
@@ -240,7 +240,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 - **XRLab (Genişletilmiş Gerçeklik Laboratuvarı)**
 - **E-posta**: xrlab@mcbu.edu.tr
 
-## 🙏 Teşekkürler
+## Teşekkürler
 
 Bu proje Manisa Celal Bayar Üniversitesi Manisa Teknik Bilimler Meslek Yüksekokulu Bilgisayar Teknolojisi Bölümü Genişletilmiş Gerçeklik Laboratuvarı'nda (XRLab) 2025 yılı yaz staj döneminde geliştirilmiştir.
 
@@ -248,4 +248,4 @@ Bu proje Manisa Celal Bayar Üniversitesi Manisa Teknik Bilimler Meslek Yükseko
 
 **MCBÜ XRLab © 2025 - Tüm Hakları Saklıdır.**
 
-[⬆️ Başa Dön](#aisg-kkd-denetim-sistemi)
+[Başa Dön](#aisg-kkd-denetim-sistemi)
