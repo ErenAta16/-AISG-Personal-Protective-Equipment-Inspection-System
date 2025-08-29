@@ -85,24 +85,39 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Uygulamayı Çalıştırın
+### 4. Model Dosyalarını İndirin
+Model dosyaları çok büyük olduğu için Git LFS ile yönetilmektedir. İndirmek için:
+
+```bash
+# Git LFS'i etkinleştirin
+git lfs install
+
+# Model dosyalarını indirin
+git lfs pull
+```
+
+Alternatif olarak, model dosyalarını manuel olarak indirebilirsiniz:
+- `models/best.pt`: PPE tespit modeli (baret + yelek)
+- `models/insantespit.pt`: İnsan tespit modeli
+
+### 5. Uygulamayı Çalıştırın
 ```bash
 # Model dosyaları models/ klasöründe bulunmalıdır
 # - best.pt (baret ve yelek tespit modeli)
 # - insantespit.pt (insan tespit modeli)
 ```
 
-### 5. Uygulamayı Çalıştırın
+### 6. Uygulamayı Çalıştırın
 ```bash
-python app.py
+streamlit run app.py
 ```
 
-Uygulama `http://localhost:5000` adresinde çalışmaya başlayacaktır.
+Uygulama `http://localhost:8501` adresinde çalışmaya başlayacaktır.
 
 ## 📖 Kullanım
 
 ### Dashboard Erişimi
-1. Web tarayıcınızda `http://localhost:5000` adresine gidin
+1. Web tarayıcınızda `http://localhost:8501` adresine gidin
 2. Ana dashboard'da gerçek zamanlı analizleri izleyin
 3. Sol menüden farklı modüllere erişin
 

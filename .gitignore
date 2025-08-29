@@ -128,11 +128,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Model dosyaları (çok büyük olduğu için)
-models/*.pt
-models/*.pth
-models/*.onnx
-models/*.tflite
+# Model dosyaları (Git LFS ile yönetiliyor)
+# models/*.pt
+# models/*.pth
+# models/*.onnx
+# models/*.tflite
 
 # Output dosyaları
 outputs/
